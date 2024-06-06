@@ -12,18 +12,18 @@ export const Services = (props) => {
             dapibus leonec.
           </p> */}
         </div>
-        <div className="row">
+        <div className="row service-frame">
           {props.data
             ? props.data.map((d, i) => (
-                <div key={`${d.name}-${i}`} className="col-md-4 frame">
+                <div key={`${d.name}-${i}`} className="col-md-4">
                   {" "}
                   {/* <i className={d.icon}></i> */}
+                  <div className="service-frame-item">
                   <img src={d.imageSrc} alt="service" width="275" height="auto" className="service-img"/>
-                  <div className="service-desc">
-                    <h3>{d.name}</h3>
+                    <h3 className="service-descr">{d.name}</h3>
                     {/* <p>{d.text}</p> */}
-                  </div>
                   <hr className="title-line"/>
+                  </div>
                 </div>
               ))
             : "loading"}

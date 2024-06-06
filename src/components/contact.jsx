@@ -15,16 +15,22 @@ export const Contact = (props) => {
     setState((prevState) => ({ ...prevState, [name]: value }));
   };
   const clearState = () => setState({ ...initialState });
-  
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(name, email, message);
-    
-    {/* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */ }
-    
+
+    {
+      /* replace below with your own Service ID, Template ID and Public Key from your EmailJS account */
+    }
+
     emailjs
-      .sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", e.target, "YOUR_PUBLIC_KEY")
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        e.target,
+        "YOUR_PUBLIC_KEY"
+      )
       .then(
         (result) => {
           console.log(result.text);
@@ -39,16 +45,59 @@ export const Contact = (props) => {
     <div>
       <div id="contact">
         <div className="container">
-          <div className="col-md-8">
+          <div className="col-md-7">
             <div className="row">
-              <div className="section-title">
-                <h2>Get In Touch</h2>
-                <p>
-                  Please fill out the form below to send us an email and we will
-                  get back to you as soon as possible.
-                </p>
+              <div className="social">
+                <ul>
+                  <li>
+                    <a href={props.data ? props.data.facebook : "/"}>
+                      <i className="fa fa-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href={props.data ? props.data.twitter : "/"}>
+                      <i className="fa fa-twitter"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href={props.data ? props.data.youtube : "/"}>
+                      <i className="fa fa-instagram"></i>
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <form name="sentMessage" validate onSubmit={handleSubmit}>
+            </div>
+            <div className="row">
+              <div className="section-title text-center">
+                <h2>CONTÁCTANOS</h2>
+                <p className="contact-paragraph">Empieza a trabajar con nosotros</p>
+                <button type="submit" className="btn btn-lg btn-dark-green">
+                  Contacto
+                </button>
+              </div>
+            </div>
+            <div className="row text-center">
+              <div className="col-md-6">
+                <p className="contact-type">NÚMERO</p>
+                <p className="contact-paragraph">+51 972 424 771</p>
+                <p className="contact-paragraph">+51 980 997 849</p>
+              </div>
+              <div className="col-md-6">
+                <p className="contact-type">Email</p>
+                <p className="contact-paragraph">informes@akilicencia.com</p>
+              </div>
+            </div>
+            <div className="row text-center">
+              <div className="col-md-12">
+                <p className="contact-type">DIRECCIÓN</p>
+                <p className="contact-paragraph">Av. Raúl Ferrero 1280 - La Molina</p>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-5">
+            <div className="row">
+              <img src="../img/contacto.png" alt="Contacto" className="contact-img" height="620" width="auto"/>
+              {/* <form name="sentMessage" validate onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-md-6">
                     <div className="form-group">
@@ -95,10 +144,10 @@ export const Contact = (props) => {
                 <button type="submit" className="btn btn-custom btn-lg">
                   Send Message
                 </button>
-              </form>
+              </form> */}
             </div>
           </div>
-          <div className="col-md-3 col-md-offset-1 contact-info">
+          {/* <div className="col-md-3 col-md-offset-1 contact-info">
             <div className="contact-item">
               <h3>Contact Info</h3>
               <p>
@@ -124,38 +173,15 @@ export const Contact = (props) => {
                 {props.data ? props.data.email : "loading"}
               </p>
             </div>
-          </div>
-          <div className="col-md-12">
-            <div className="row">
-              <div className="social">
-                <ul>
-                  <li>
-                    <a href={props.data ? props.data.facebook : "/"}>
-                      <i className="fa fa-facebook"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.twitter : "/"}>
-                      <i className="fa fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href={props.data ? props.data.youtube : "/"}>
-                      <i className="fa fa-youtube"></i>
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div id="footer">
         <div className="container text-center">
           <p>
-            &copy; 2023 Issaaf Kattan React Land Page Template. Design by{" "}
-            <a href="http://www.templatewire.com" rel="nofollow">
-              TemplateWire
+            &copy; 2024 Akigreen es parte de Akigroup. Desarrollado por{" "}
+            <a href="#" rel="nofollow">
+              Urbeweb
             </a>
           </p>
         </div>

@@ -441,11 +441,30 @@ header .intro-text {
   margin-right: -20px;
 } */
 
-.frame {
+/* .service-frame:not(:last-child) {
+  margin-right: 15px;
+} */
+
+.service-frame {
+  display: flex;
+  flex-grow: 1;
+}
+
+
+.service-frame-item {
+  padding: 12px 15px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   border: 1px var(--dark-green) solid;
   border-radius: 25px;
-  padding: 20px;
-  /* margin-right: 20px; */
+}
+
+.service-descr {
+  text-transform: uppercase;
+  font-size: xx-large;
+  font-weight: bolder;
 }
 
 /* description Section */
@@ -644,8 +663,9 @@ header .intro-text {
 /* Contact Section */
 #contact {
   padding: 100px 0 60px;
-  background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
-  color: rgba(255, 255, 255, 0.75);
+  /* background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%); */
+  background: var(--lemon-green);
+  color: white;
 }
 
 #contact .section-title {
@@ -666,7 +686,7 @@ header .intro-text {
 #contact .section-title h2::after {
   position: absolute;
   content: "";
-  background: rgba(255, 255, 255, 0.3);
+  background: var(--lemon-green);
   height: 4px;
   width: 60px;
   bottom: 0;
@@ -690,10 +710,13 @@ header .intro-text {
   text-align: left;
 }
 
-#contact .btn-custom {
+#contact .btn-dark-green {
+  border-radius: 30px;
   margin: 30px 0;
-  background: transparent;
-  border: 2px solid #fff;
+  padding: 14px 25px;
+  background: var(--dark-green);
+  color: white;
+  text-transform: uppercase;
 }
 
 #contact .btn-custom:hover {
@@ -776,19 +799,36 @@ label {
 }
 
 #contact .social i.fa {
+  color: var(--dark-green);
   font-size: 22px;
   width: 48px;
   height: 48px;
   padding: 12px 0;
-  border: 2px solid #fff;
-  color: #fff;
+  border: 2px solid var(--dark-green);
+  /* color: #fff; */
   border-radius: 50%;
   transition: all 0.3s;
+  margin-bottom: 40px;
 }
 
 #contact .social i.fa:hover {
   color: #608dfd;
   background: #fff;
+}
+
+.contact-img {
+  border: 2px var(--dark-green) solid;
+  border-radius: 95px;
+}
+
+.contact-type {
+  color: var(--dark-green);
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+.contact-paragraph {
+  font-size: larger;
 }
 
 /* Footer Section*/
