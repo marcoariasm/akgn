@@ -15,7 +15,7 @@ import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
 import "./App.css";
 
-import Preloader from "./components/Preloader/Preloader";
+import Preloader from "./components/Preloader/Preloader";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 import Timer from "./components/Countdown/Timer";
 import Optin from "./components/Optin/Optin";
 // import "./styles.css";
