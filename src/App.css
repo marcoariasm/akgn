@@ -1,27 +1,4 @@
-@media screen and (max-width: 400px) {
-  #features {
-    padding: 20px;
-    width: 111%;
-  }
-  #about,
-  #services,
-  #testimonials,
-  #team,
-  #contact,
-  #footer {
-    width: 111%;
-  }
-
-  #portfolio {
-    width: 110%;
-  }
-}
-
-#menu {
-  height: 125px;
-}
-
-.stripped-bg{
+nav.stripped-bg{
   /* position: fixed;
   top: 0;
   left: 0;
@@ -35,11 +12,4 @@
     rgba(0, 0, 0, 0) 4px,
     rgba(0, 0, 0, 0) 8px
   );
-  /* background: rgb(95, 201, 160);
-  background: linear-gradient(
-    0deg,
-    rgba(49, 177, 128, 1) 0%,
-    rgba(49, 177, 128, 1) 50%,
-    rgba(49, 177, 128, 0.6) 100%
-  ); */
 }

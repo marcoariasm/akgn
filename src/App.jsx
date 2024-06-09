@@ -13,12 +13,12 @@ import { Description } from "./components/description";
 import { Contact } from "./components/contact";
 import JsonData from "./data/data.json";
 import SmoothScroll from "smooth-scroll";
-// import "./App.css";
+import "./App.css";
 
-import Preloader from "./components/Preloader/Preloader";
+import Preloader from "./components/Preloader/Preloader";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 import Timer from "./components/Countdown/Timer";
 import Optin from "./components/Optin/Optin";
-import "./styles.css";
+// import "./styles.css";
 import logo from "./assets/logo-blanco-small.png";
 
 export const scroll = new SmoothScroll('a[href*="#"]', {
@@ -34,7 +34,7 @@ const App = () => {
 
   return (
     <div>
-      <div className="App-bg">
+      {/* <div className="App-bg">
         <div className="container">
           <h1>
             <img src={logo} alt="akigreen" />
@@ -45,10 +45,10 @@ const App = () => {
           <Timer />
           <Optin />
           <Preloader />
-        </div>
-      </div>
-      {/* <Navigation />
-      <Header data={landingPageData.Header} />
+        </div> 
+      </div> */}
+      <Navigation />
+      {/* <Header data={landingPageData.Header} />
       <About data={landingPageData.About} />
       <Services data={landingPageData.Services} />
       <Description data={landingPageData.Description} /> */}
@@ -62,7 +62,7 @@ const App = () => {
   );
 };
 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+// const rootElement = document.getElementById("root");
+// ReactDOM.render(<App />, rootElement);
 
 export default App;
