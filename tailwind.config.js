@@ -3,10 +3,22 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        'sm': {'min': '0px', 'max': '375px'},
+        'md': {'min': '376px', 'max': '768px'},
+        'lg': {'min': '769px'},
+      },
       fontFamily: {
         montserrat: ['"Montserrat"', "sans-serif"],
       },
       colors: {
+        logo:{
+          orange: "hsla(25, 100%, 57%, 0.73)",
+          blue: "hsla(230, 80%, 32%, 0.73)",
+          red: "hsla(6, 100, 54, 0.73)",
+          green: "hsla(107, 49%, 52%, 0.73)", 
+          lightblue: "hsla(194, 100%, 47%, 0.73)", //rgba(0, 184, 241, 1)
+        },
         green: {
           // --dark-green: #005034;
           // --light-green: #e2f6c9;
