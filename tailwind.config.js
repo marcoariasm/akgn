@@ -2,12 +2,12 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      'sm': '376px',
+      'md': '768px',
+      'lg': '1024px',
+    },
     extend: {
-      screens: {
-        'sm': {'min': '0px', 'max': '375px'},
-        'md': {'min': '376px', 'max': '768px'},
-        'lg': {'min': '769px'},
-      },
       fontFamily: {
         montserrat: ['"Montserrat"', "sans-serif"],
       },
@@ -19,33 +19,35 @@ module.exports = {
           green: "hsla(107, 49%, 52%, 0.73)", 
           lightblue: "hsla(194, 100%, 47%, 0.73)", //rgba(0, 184, 241, 1)
         },
-        green: {
-          // --dark-green: #005034;
-          // --light-green: #e2f6c9;
-          // --lemon-green: #86bc42;
-          dark: "#005034",
-          lemon: "#86bc42",
-          light: "#e2f6c9",
+        darkGreen: {
+          100: "hsla(159, 100%, 16%, 1)",
+          80: "hsla(159, 100%, 16%, 0.8)",
+          30: "hsla(159, 100%, 16%, 0.3)",
         },
-        black: {
-          100: "hsla(0, 0%, 0%, 1)",
-          90: "hsla(0, 0%, 0%, 0.9)",
-          80: "hsla(0, 0%, 0%, 0.8)",
-          50: "hsla(0, 0%, 0%, 0.5)",
-          33: "#333",
+        lemonGreen: {
+          100: "hsl(87, 48%, 50%, 1)",
+          80: "hsl(87, 48%, 50%, 0.8)",
+          30: "hsl(87, 48%, 50%, 0.3)",
         },
-        magenta: {
-          100: "hsla(323, 86%, 60%, 1)",
-          80: "hsla(323, 86%, 60%, 0.8)",
-          50: "hsla(323, 86%, 60%, 0.5)",
-        },
-        cyan: {
-          100: "hsla(201, 70%, 70%, 1)",
-          80: "hsla(201, 70%, 70%, 0.8)",
-          50: "hsla(201, 70%, 70%, 0.5)",
-          20: "hsla(201.82, 73.33%, 97.06%, 0.2)",
+        lightGreen: {
+          100: "hsl(87, 71%, 88%, 1)",
+          80: "hsl(87, 71%, 88%, 0.8)",
+          30: "hsl(87, 71%, 88%, 0.3)",
         },
       },
+      animation: {
+        telon: 'telon 0.5s ease'
+      },
+      keyframes: {
+        telon: {
+          '0%': {
+            transform: 'translate(0px, 100%)',
+          },
+          '100%': {
+            transform: 'translate(0px, 0px)',
+          },
+        }
+      }
     },
   },
   plugins: [],

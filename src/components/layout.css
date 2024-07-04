@@ -1,18 +1,31 @@
-* {
-  --dark-green: #005034;
-  --light-green: #e2f6c9;
-  --lemon-green: #86bc42;
+:root {
+  --darkGreen: #005034;
+  --lightGreen: #e2f6c9;
+  --lemonGreen: #86bc42;
 }
 
-nav.stripped-bg{
-  background: repeating-linear-gradient(
+nav.stripped-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background-color: rgba(255, 255, 255, 1); */
+  background: var(--lightGreen);
+  /* background: repeating-linear-gradient(
     -45deg,
-    #c2e0a2 1px,
-    #c2e0a2 1px,
-    rgba(0, 0, 0, 0) 4px,
-    rgba(0, 0, 0, 0) 8px
-  );
-  background-color: white;
+    #fff 1px,
+    #fff 1px,
+    rgba(194, 224, 162, 1) 4px,
+    rgba(194, 224, 162, 1) 8px
+    ); */
+  z-index: 99;
+  @apply opacity-100
+}
+
+nav::after {
+  background-color: rgba(255, 255, 255,1);
+  content: "";
+  @apply opacity-100
 }
 
 /* navigation */
@@ -22,7 +35,7 @@ nav.stripped-bg{
   height: 22px;
   transition: all 0.25s;
   position: relative;
-  background-color: var(--dark-green);
+  background-color: white;
 }
 
 .hamburger-top,
@@ -35,6 +48,7 @@ nav.stripped-bg{
   left: 0;
   transform: rotate(0);
   transition: all 0.5s;
+  background-color: var(--darkGreen);
 }
 
 .hamburger-middle {
@@ -51,7 +65,6 @@ nav.stripped-bg{
 
 .open .hamburger-top {
   transform: rotate(45deg) translateY(6px) translateX(6px);
-  display: none;
 }
 
 .open .hamburger-middle {
@@ -60,16 +73,40 @@ nav.stripped-bg{
 
 .open .hamburger-bottom {
   transform: rotate(-45deg) translateY(6px) translateX(-6px);
-  display: none;
 }
 
-.menu-item {
-  cursor: pointer;
-  border-bottom: 1px white;
-  margin-left: 40px;
-  margin-right: 40px;
+
+.hero {
+  @apply h-[calc(90vh-90px)] md:h-[calc(90vh-70px)] 
 }
 
-.menu-item.last {
-  border-bottom: none;
+.hero--background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-bottom: 40px;
+  /* background-color: var(--lemonGreen);bg-gradient-to-br from-yellow-300 to-orange-600 */
+  z-index: -3;
+  height: 100%;
+  width: var(--width);
+  border-bottom-right-radius: 35px;
+  /* border-top-right-radius: 35px; */
+  @apply bg-gradient-to-br from-white from-20% via-lightGreen-100 via-40% to-lemonGreen-80 to-100%
 }
+
+
+.bg-gradient-akigreen {
+  @apply bg-gradient-to-br from-white from-10% via-lightGreen-100 via-30% to-lemonGreen-100 to-80%
+}
+
+.bg-gradient-akigreen2 {
+  @apply bg-gradient-to-r from-lemonGreen-80 from-30% via-lightGreen-100 via-90% to-white to-100%
+}
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+ gmp-map {
+  height: 100%;
+}
+

@@ -1,8 +1,15 @@
 {
-  "Header": {
-    "title": "AKIGREEN",
-    "paragraph": "Texto de ejemplo, texto de ejemplo, texto de ejemplo, texto de ejemplo, texto de ejemplo."
-  },
+  "Menu": [
+    { "id": "1", "item": "Inicio", "link": "/" },
+    { "id": "2", "item": "Quienes somos", "link": "#about" },
+    { "id": "3", "item": "", "link": "" },
+    { "id": "4", "item": "", "link": "" },
+    { "id": "5", "item": "", "link": "" },
+    { "id": "5", "item": "", "link": "" },
+    { "id": "", "item": "", "link": "" }
+  ],
+  "title": "AKIGREEN",
+  "paragraph": "Texto de prueba texto de prueba texto de prueba texto de prueba texto de prueba",
   "About": {
     "paragraph": "Somos una empresa con personal altamente capacitado y experimentado, donde ofrecemos un servicio eficiente y sostenible a nuestros clientes mientras protegemos la naturaleza, almacenamiento e industria. Nos comprometemos con la conservación ambiental y promovemos prácticas responsables en todas las operaciones.",
     "Why": [
@@ -67,7 +74,7 @@
   ],
   "Services": [
     {
-      "icon": "fa fa-wordpress",      
+      "icon": "fa fa-wordpress",
       "imageSrc": "../../img/residuos-hospitalarios.png",
       "name": "Recojo de residuos sólidos hospitalarios",
       "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
@@ -139,7 +146,7 @@
       "job": "Project Manager"
     }
   ],
-  "Description" : {
+  "Description": {
     "title": "Recojo de residuos sólidos hospitalarios",
     "paragraph1": "Nos encargamos del recojo y procesamiento de los residuos sólidos que se desechan en el consultorio.",
     "paragraph2": "Nos encargamos de colocar sus manifiestos en la página decretada por el estado peruano llamado SIGERSOL."
