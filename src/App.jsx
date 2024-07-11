@@ -1,68 +1,53 @@
-import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import { Navigation } from "./components/navigation";
-import { Header } from "./components/header";
-import { Features } from "./components/features";
-import { About } from "./components/about";
-import { Services } from "./components/services";
-import { OtherServices } from "./components/otherServices";
-import { Gallery } from "./components/gallery";
-import { Testimonials } from "./components/testimonials";
-import { Team } from "./components/Team";
-import { Description } from "./components/description";
-import { Contact } from "./components/contact";
-import JsonData from "./data/data.json";
-import SmoothScroll from "smooth-scroll";
+import React, { useEffect, useState } from "react";
+
+import Navigation from './sections/Navigation';
+import Hero from './sections/Hero';
+import About from './sections/About';
+import Services from './sections/Services';
+import Permits from './sections/Permits';
+import Cta from './sections/Cta';
+// import Clients from './sections/Clients';
+import Faq from './sections/Faq';
+import Contact from './sections/Contact';
+import Footer from './sections/Footer';
 import "./App.css";
 
-import Preloader from "./components/Preloader/Preloader";                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-import Timer from "./components/Countdown/Timer";
-import Optin from "./components/Optin/Optin";
-// import "./styles.css";
-import logo from "./assets/logo-blanco-small.png";
-
-export const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000,
-  speedAsDuration: true,
-});
-
 const App = () => {
-  const [landingPageData, setLandingPageData] = useState({});
+  const [, setScrollOn] = useState(0);
+  
   useEffect(() => {
-    setLandingPageData(JsonData);
+    const onScroll = () => setScrollOn(window.scrollY);
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
-
   return (
-    <div>
-      {/* <div className="App-bg">
-        <div className="container">
-          <h1>
-            <img src={logo} alt="akigreen" />
-            <br />
-            <h4 style={{ color: "white" }}>sitio web en construcción</h4>
-            <br />
-          </h1>
-          <Timer />
-          <Optin />
-          <Preloader />
-        </div> 
-      </div> */}
+    <>
       <Navigation />
-      {/* <Header data={landingPageData.Header} />
-      <About data={landingPageData.About} />
-      <Services data={landingPageData.Services} />
-      <Description data={landingPageData.Description} /> */}
-      {/* <Features data={landingPageData.Features} />
-      <Gallery data={landingPageData.Gallery} />
-      <Testimonials data={landingPageData.Testimonials} />
-      <Team data={landingPageData.Team} /> */}
-      {/* <OtherServices data={landingPageData.OtherServices} />
-      <Contact data={landingPageData.Contact} /> */}
-    </div>
+      <Hero />
+      <About />
+      <Services />
+      <Permits />
+      <Cta />
+      {/* <Clients /> */}
+      <Faq />
+      <Contact />
+      <Footer />
+        {/* {scrollOn > 0 && (
+          <div className="flex justify-center items-center fixed rounded-full bg-lemonGreen-80 bottom-8 right-8 z-90 w-20 h-20 cursor-pointer">
+            <div
+              onClick={() => document.getElementsById("top").scrollIntoView({behavior: "smooth"})}
+            >
+              <img
+                src="img/punta-de-flecha-hacia-arriba.png"
+                alt=""
+                className="w-16 h-auto"
+              />
+            </div>
+          </div>
+        )} */}
+    </>
   );
 };
-
-// const rootElement = document.getElementById("root");
-// ReactDOM.render(<App />, rootElement);
 
 export default App;
